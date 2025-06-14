@@ -89,25 +89,52 @@
             font-size: 13px;
             color: #888;
         }
+        .spinner {
+    margin: 20px auto;
+    width: 40px;
+    height: 40px;
+    border: 5px solid #eee;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>🔍 Pristyn Care Web Scraper</h2>
-        <form method="post">
-            <label for="url">Enter Homepage URL:</label>
-            <input type="text" id="url" name="url" required>
-            <button type="submit">🚀 Start Scraping</button>
-        </form>
+    <form method="post" onsubmit="startScraping()">
+    <label for="url">Enter Homepage URL:</label>
+    <input type="text" id="url" name="url" placeholder="https://www.pristyncare.com" required>
+    <button type="submit" id="submitBtn">🚀 Start Scraping</button>
+</form>
 
-        {% if download_link %}
-            <div class="note">
-                ✅ Scraping completed!<br>
-                <a href="{{ download_link }}">Download Excel ZIP</a>
-            </div>
-        {% endif %}
+<div id="progress" style="display: none; margin-top: 20px; text-align: center;">
+    <div class="spinner"></div>
+    <p>Scraping in progress… please wait ⏳</p>
+</div>
+
+{% if download_link %}
+    <div class="note">
+        ✅ Scraping done!<br>
+        <a href="{{ download_link }}">Download Excel ZIP</a>
+    </div>
+{% endif %}
+
 
        
     </div>
+    <script>
+function startScraping() {
+    // Disable the button
+    document.getElementById('submitBtn').disabled = true;
+    // Show progress spinner
+    document.getElementById('progress').style.display = 'block';
+}
+</script>
+
 </body>
 </html>
