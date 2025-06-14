@@ -84,4 +84,25 @@ After scraping is complete, you'll get four downloadable Excel files:
 
 These files will also be available as clickable download links directly in the web interface ✅
 
+---
+
+## 🌐 Live Demo
+
+👉 Try it live on Render:  
+🔗 [https://api-scraper-2b8k.onrender.com/](https://api-scraper-2b8k.onrender.com/)  
+
+
+---
+
+## 🖼️ Screenshots
+
+**Main Input UI**  
+![Input Form](screenshots/2.png)
+
+**Download ZIP After Scraping**  
+![Download ZIP](screenshots/1.png)
+
+---
+
+
 
